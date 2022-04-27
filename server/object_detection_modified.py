@@ -2,7 +2,6 @@
 import numpy as np
 import time
 import cv2
-import os
 
 # construct the argument parse and parse the arguments
 confthres = 0.3
