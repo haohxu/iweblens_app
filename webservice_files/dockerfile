@@ -1,0 +1,15 @@
+FROM python:3.10.4-slim-buster
+RUN apt-get update -y && apt-get install -y python3-opencv
+
+WORKDIR /app
+
+COPY ./requirements.txt ./
+COPY ./iWebLens_server.py ./
+COPY ./object_detection_modified.py ./
+COPY ./yolo_tiny_configs/ ./yolo_tiny_configs
+
+RUN pip3 install -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python3", "/app/iWebLens_server.py"]

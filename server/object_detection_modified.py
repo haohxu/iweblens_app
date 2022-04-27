@@ -14,6 +14,7 @@ def load_model(configpath,weightspath):
     net = cv2.dnn.readNetFromDarknet(configpath, weightspath)
     return net
 
+
 def do_prediction(image,net,LABELS, image_id):
 
     (H, W) = image.shape[:2]
